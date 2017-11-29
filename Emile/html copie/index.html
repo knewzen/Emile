@@ -1,0 +1,90 @@
+<html>
+	
+<head>
+<meta charset="utf-8">
+  <title>Jeu Emile</title>
+  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- fichier css de materialize : style et icônes -->
+	
+	
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!-- fichier de fonctions js -->
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+	<!-- animations materialize -->
+	
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<!-- police d'écriture -->
+	
+    <style>
+        html, body{
+            margin: 0;
+            padding: 30;
+            background:skyblue;
+            color: grey;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        p{
+            font-family: 'Indie Flower', cursive;
+        }
+    </style>
+</head>
+	
+
+<body>
+    
+	
+<div class="row">
+    
+   <form id="formulaire">
+       <!--Ici on crée les checkboxs pour selectionner les dés -->
+         <input type="checkbox" id="de1" name="de1" value="de1"/>
+        <label for="de1">de n°1</label>
+         <input type="checkbox" id="de2" name="de1" value="de2"/>
+        <label for="de2">de n°2</label>
+    </form>
+    
+<!-- Sur le bouton on ajoute la balise OnClick pour executer la fonction LaunchDice en js -->
+ <button class ="btn waves-effect waves-light" onclick="LaunchDice()" name="send" >
+              <i class="material-icons right">casino</i>
+ </button>
+
+    <!-- On affiche les résltats défini par le script js plus bas -->
+    <p style = "width:50%"
+    id="resultatde1">
+    </p>
+    <p style = "width:50%"
+    id="resultatde2">
+    </p>
+</div>
+</body>
+	
+
+<script>
+function LaunchDice(){
+    
+		 //  On vérifie si la checkbox de1 est checked, si oui caleur dé stockée dans de1
+     if($('#de1').is(":checked")){
+     result1 =  Math.floor(Math.random() * 6) + 1
+		 // On récupère la zone de texte resultatde1 est on met notre resultat
+    document.getElementById("resultatde1").innerHTML = result1;
+
+    }
+    
+		// On fait tout pareil avec le de2 
+         if($('#de2').is(":checked")){
+     result2 =  Math.floor(Math.random() * 6) + 1
+      document.getElementById("resultatde2").innerHTML = result2
+                    }
+    
+
+		//Résultat du tirage pour nous rassurer et voir que ça maarche
+                    console.log("result 1: "+ result1.toString() + " resultat 2 : " +result2.toString())
+}
+  
+</script>
+
+<html/>
