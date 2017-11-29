@@ -20,4 +20,4 @@ app.get('/', function (request, response) {response.sendFile(__dirname + "/html/
 // Renvoie au client l'index avec "/"
 
 app.listen(8000, '127.0.0.1');
-logger.info("J'écoute au 127.0.0.1")
+logger.info("J'écoute au 127.0.0.1 au port 8000")
